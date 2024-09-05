@@ -1,11 +1,33 @@
+import Navbar from "./componenets/navbar/Navbar";
+import Home from "./pages/home/Home";
+import Services from "./pages/servicess/Services";
+import Contact from "./pages/contact/Contact";
+import Footer from "./componenets/footer/Footer";
+import { useEffect, useState } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 function App() {
+  const current_theme = localStorage.getItem("current_theme");
+  const [theme, setTheme] = useState(current_theme ? current_theme : "light");
+
+  useEffect(() => {
+    localStorage.setItem("current_theme", theme);
+  }, [theme]); // whenever the 'theme' gets updated it runs the code inside useEffect().
+
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <div className="header">This is the header</div>
-      <nav>this is the navbar</nav>
-      <div className="container">this is the main container</div>
-      <div className="footer">this is the footer</div>
+      <div className={`mainContainer ${theme}`}>
+        <Router>
+          <Navbar theme={theme} setTheme={setTheme} />
+          <Routes>
+            <Route path="/" exact Component={Home} />
+            <Route path="/services" exact Component={Services} />
+            <Route path="/contact" exact Component={Contact} />
+          </Routes>
+        </Router>
+        <Footer />
+      </div>
     </>
   );
 }

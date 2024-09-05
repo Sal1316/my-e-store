@@ -1,0 +1,65 @@
+/* Reset body margin/padding */
+body {
+  margin: 0;
+  padding: 0;
+  /* overflow-x: hidden; Prevent horizontal scrolling */
+}
+/* 
+.home {
+  width: 100%;
+  min-height: calc(73vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Gill Sans", "Gill Sans MT";
+}
+
+.headerContainer {
+  width: auto;
+  padding: 0 20px; 
+  text-align: center;
+}
+
+.headerContainer h3 {
+  color: rgb(214, 210, 210);
+  font-size: calc(16px + 2vw); 
+  font-weight: 500;
+}  */
+
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* This ensures the video is behind the content */
+}
+
+.headerContainer h3 {
+  position: relative;
+  z-index: 1;
+  color: rgb(195, 190, 190);
+  display: flex;
+  font-size: calc(16px + 2vw);
+  font-weight: 500;
+  font-style: oblique;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  border: black 1px solid;
+
+}

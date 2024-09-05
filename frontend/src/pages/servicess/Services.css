@@ -1,0 +1,72 @@
+.service {
+  text-align: center;
+  padding: 5px;
+}
+
+.servTitle {
+  font-size: 5em;
+  color: rgb(214, 210, 210);
+}
+
+.servList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cardImageContainer {
+  height: 40%; /* Image takes 40% of the card height */
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: 40vh;
+  object-fit: cover; /* Ensures the image covers the entire container */
+}
+
+.cardContent {
+  padding: 20px;
+  height: 60%; /* Content takes the remaining 50% */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns content to the top */
+}
+
+.cardTitle {
+  color: rgb(141, 3, 3);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.cardDescription {
+  font-size: 18px;
+  color: #666;
+  /* margin-top: 10px; */
+}
+
+@media only screen and (max-width: 1300px) {
+  .menuList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .menuList {
+    grid-template-columns: 1fr;
+  }
+  .servTitle {
+    font-size: 26px;
+  }
+}
